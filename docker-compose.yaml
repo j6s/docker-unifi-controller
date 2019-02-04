@@ -1,0 +1,15 @@
+version: '2'
+services:
+  unifi:
+    image: 'thej6s__unifi-controller'
+    build:
+      context: '.'
+    container_name: 'thej6s__unifi-controller'
+    ports:
+      - 8081:8081
+      - 8443:8443
+      - 8843:8843
+      - 8080:8080
+    volumes:
+      - ./data/usr/lib/unifi/data:/usr/lib/unifi/data
+    restart: always
